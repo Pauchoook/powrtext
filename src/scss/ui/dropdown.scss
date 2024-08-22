@@ -13,7 +13,7 @@
   &__arrow {
     width: 10px;
     height: 10px;
-    transition: transform .2s ease;
+    transition: transform 0.2s ease;
   }
   &__item {
     position: absolute;
@@ -43,6 +43,55 @@
     row-gap: 8px;
     a {
       font-size: 12px;
+    }
+  }
+  &__parent {
+    position: relative;
+    @include hover {
+      .dropdown__el--sub {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0px) !important;
+      }
+    }
+    &--sub {
+      @include hover {
+        .dropdown__el--sub-end {
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0px) !important;
+        }
+      }
+    }
+  }
+  &__el {
+    position: absolute;
+    left: 0;
+    background-color: var(--light-gray);
+    border: 1px solid var(--iron);
+    border-top: none;
+    color: var(--tundora);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(25px) !important;
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
+      visibility 0.4s ease;
+    &.open {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0px) !important;
+    }
+    &--sub {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transform: translateY(25px) !important;
+    }
+    &--sub-end {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transform: translateY(25px) !important;
     }
   }
 }
