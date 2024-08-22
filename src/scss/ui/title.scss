@@ -1,1 +1,18 @@
-
+.title {
+  margin: 0;
+}
+.title-1 {
+  font-size: 45px;
+  @include desktop-min {
+    font-size: 40px;
+  }
+  @include laptop {
+    font-size: 30px;
+  }
+  @include tablet {
+    font-size: 25px;
+  }
+  @include mobile {
+    font-size: 20px;
+  }
+}

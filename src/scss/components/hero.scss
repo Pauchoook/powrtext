@@ -1,0 +1,158 @@
+.hero {
+  padding: 35px 0px;
+  overflow: hidden;
+  @include tablet {
+    padding-bottom: 50px;
+    padding-top: 0;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 420px;
+    padding: 30px 30px 30px 270px;
+    color: white;
+    background-color: var(--light-gray);
+    z-index: 1;
+    @include desktop {
+      padding-left: 30px;
+    }
+    @include laptop {
+      padding: 20px;
+    }
+    @include tablet {
+      padding: 35px 0px 0px 0px;
+      color: var(--tundora);
+      min-height: 290px;
+      background-color: transparent;
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: var(--light-gray);
+        top: 0;
+        right: -15px;
+        left: -15px;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+  }
+  &__bg {
+    position: absolute;
+    width: 980px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__info {
+    max-width: 460px;
+    @include laptop {
+      max-width: 370px;
+    }
+    @include tablet {
+      max-width: 300px;
+    }
+    @include mobile {
+      max-width: 220px;
+    }
+  }
+  &__status {
+    display: flex;
+    align-items: center;
+    max-width: 405px;
+    padding-bottom: 10px;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-bottom: 1px solid currentColor;
+    @include tablet {
+      border-color: var(--iron);
+    }
+  }
+  &__status-icon {
+    width: 25px;
+    height: 25px;
+    @include tablet {
+      color: var(--main);
+    }
+  }
+  &__status-content {
+    font-weight: 500;
+    font-size: 16px;
+    @include tablet {
+      font-size: 14px;
+    }
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  &__title {
+    margin-bottom: 25px;
+    @include tablet {
+      color: black;
+      span {
+        color: var(--main);
+      }
+    }
+  }
+  &__btn {
+    @include tablet {
+      color: white;
+      background-color: var(--main);
+      border-color: var(--main);
+      @include hover {
+        background-color: white;
+        color: var(--main);
+      }
+    }
+  }
+  &__slider {
+    position: absolute !important;
+    width: 615px;
+    height: fit-content !important;
+    bottom: 0;
+    right: 0;
+    z-index: -1 !important;
+    .swiper-slide {
+      height: fit-content;
+    }
+    @include desktop-min {
+      width: 500px;
+    }
+    @include laptop {
+      width: 400px;
+    }
+    @include tablet {
+      width: 410px;
+      right: -160px;
+    }
+    @include mobile-min {
+      width: 360px;
+      right: -140px;
+    }
+  }
+  &__slide-img {
+    display: block;
+    width: 100%;
+  }
+  &__slider-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+    span {
+      cursor: pointer;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--main);
+      &.swiper-pagination-bullet-active {
+        background-color: var(--main);
+      }
+    }
+  }
+}
