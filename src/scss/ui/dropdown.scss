@@ -1,0 +1,48 @@
+.dropdown {
+  position: relative;
+  @include hover {
+    .dropdown__item {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
+    .dropdown__arrow {
+      transform: rotate(180deg);
+    }
+  }
+  &__arrow {
+    width: 10px;
+    height: 10px;
+    transition: transform .2s ease;
+  }
+  &__item {
+    position: absolute;
+    left: 0;
+    padding-top: 10px;
+    max-width: 300px;
+    width: 320px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(25px);
+    z-index: 10;
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
+      visibility 0.4s ease;
+  }
+  &__body {
+    padding: 15px;
+    border-radius: 5px;
+    width: fit-content;
+    border: 1px solid var(--iron);
+    background-color: white;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    a {
+      font-size: 12px;
+    }
+  }
+}

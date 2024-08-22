@@ -1,0 +1,271 @@
+.header {
+  @include desktop {
+    padding-top: 10px;
+  }
+  @include tablet {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #afaeae;
+  }
+  &__wrapper {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 15px;
+    @include mobile {
+      gap: 0;
+    }
+  }
+  &__btn-burger {
+    display: none;
+    border-radius: 5px;
+    border: 1px solid var(--tundora);
+    width: 47px;
+    height: 47px;
+    span {
+      display: block;
+      border-radius: 5px;
+      width: 21px;
+      height: 2px;
+      background-color: currentColor;
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+  &__logo {
+    display: block;
+    width: 330px;
+    @include desktop {
+      width: 215px;
+    }
+    @include laptop {
+      width: 180px;
+    }
+    @include tablet {
+      width: 220px;
+    }
+    @media (max-width: 399px) {
+      width: 180px;
+    }
+  }
+  &__logo-img {
+    width: 100%;
+  }
+  &__form {
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid var(--tundora);
+    background-color: var(--light-gray);
+    @include desktop {
+      max-width: 300px;
+    }
+    @include laptop {
+      max-width: 250px;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  &__input {
+    flex: 1;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--tundora);
+    padding: 0 20px;
+  }
+  &__form-btn {
+    @include flex-center;
+    width: 50px;
+    height: 50px;
+    color: var(--main);
+    @include laptop {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__form-icon {
+    width: 23px;
+    height: 23px;
+    @include laptop {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__nav-top {
+    @include desktop-min {
+      display: none;
+    }
+  }
+  &__nav-top-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 360px;
+    width: 100%;
+    li {
+      flex: 0 1 32%;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      font-weight: 500;
+      font-size: 12px;
+      transition: color 0.2s ease;
+      @include hover {
+        color: var(--main);
+      }
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  &__tel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: black;
+    font-weight: 600;
+    font-size: 23px;
+    transition: color 0.2s ease;
+    @include hover {
+      color: var(--main);
+    }
+    @include desktop {
+      font-size: 18px;
+    }
+    @include laptop {
+      font-size: 16px;
+    }
+    @include tablet {
+      @include flex-center;
+      width: 47px;
+      height: 47px;
+      background-color: var(--main);
+      border-radius: 5px;
+      span {
+        display: none;
+      }
+    }
+  }
+  &__tel-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--main);
+    @include tablet {
+      color: white;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__btn-order {
+    font-family: "Gilory", sans-serif;
+    font-size: 16px;
+    width: fit-content;
+    border-bottom: 1px dashed currentColor;
+    transition: color 0.2s ease;
+    @include hover {
+      color: var(--main);
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    background-color: var(--main);
+    border-radius: 5px;
+    color: white;
+    @include tablet {
+      
+    }
+  }
+  &__catalog-btn {
+    display: flex;
+    align-items: center;
+    flex: 0 1 235px;
+    padding: 15px 20px;
+    gap: 10px;
+    border-radius: 5px 0px 0px 5px;
+    border-right: 1px solid var(--jewel);
+    background-color: var(--jewel);
+
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    @include hover {
+      background-color: transparent;
+    }
+    @include laptop {
+      @include flex-center;
+      font-size: 14px;
+      flex: none;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      span {
+        display: none;
+      }
+    }
+  }
+  &__catalog-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 20px;
+    span {
+      display: block;
+      border-radius: 5px;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
+  &__nav-list {
+    @include flex-between;
+    font-family: "Gilory", sans-serif;
+    flex: 1;
+    padding: 0px 35px 0px 65px;
+    @include desktop {
+      padding: 0 15px;
+    }
+    a {
+      position: relative;
+      font-size: 18px;
+      @include hover {
+        &::before {
+          right: 0;
+        }
+      }
+      @include desktop-min {
+        font-size: 14px;
+      }
+      @include laptop {
+        font-size: 12px;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        right: 100%;
+        height: 1px;
+        background-color: currentColor;
+        transition: right 0.2s ease;
+      }
+    }
+  }
+}
