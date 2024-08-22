@@ -11,6 +11,9 @@
     flex-wrap: wrap;
     gap: 30px;
     padding-bottom: 15px;
+    @include tablet {
+      padding-bottom: 0;
+    }
     @include mobile {
       gap: 0;
     }
@@ -21,12 +24,27 @@
     border: 1px solid var(--tundora);
     width: 47px;
     height: 47px;
+    &.active {
+      span {
+        position: absolute;
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
     span {
       display: block;
       border-radius: 5px;
       width: 21px;
       height: 2px;
       background-color: currentColor;
+      transition: transform 0.2s ease;
     }
     @include tablet {
       display: flex;
@@ -190,13 +208,39 @@
     border-radius: 5px;
     color: white;
     @include tablet {
-      
+      position: fixed;
+      flex-direction: column;
+      row-gap: 15px;
+      max-width: 500px;
+      width: 100%;
+      top: 77px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--light-gray);
+      border-right: 1px solid var(--iron);
+      color: var(--tundora);
+      padding: 20px 15px;
+      overflow-y: auto;
+      align-items: start;
+      border-radius: 0;
+      transform: translateX(-500px);
+      z-index: 100;
+      transition: transform 0.5s ease;
+      &.open {
+        transform: translateX(0);
+      }
+    }
+    @media (max-width: 399px) {
+      top: 73px;
     }
   }
   &__catalog-parent {
     flex: 0 1 235px;
     @include laptop {
       flex: none;
+    }
+    @include tablet {
+      width: 100%;
     }
   }
   &__catalog-btn {
@@ -226,6 +270,39 @@
         display: none;
       }
     }
+    @include tablet {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      background-color: transparent;
+      width: 100%;
+      height: auto;
+      font-size: 18px;
+      border-right: none;
+      &._spoller-active {
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+      span {
+        display: block;
+        background-color: transparent;
+      }
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: var(--main);
+        right: 0;
+        transition: transform .2s ease;
+      }
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
   }
   &__catalog-burger {
     display: flex;
@@ -239,9 +316,9 @@
       height: 2px;
       background-color: currentColor;
     }
-  }
-  &__catalog-list {
-
+    @include tablet {
+      display: none;
+    }
   }
   &__catalog-list-btn {
     font-family: "Gilory", sans-serif;
@@ -249,13 +326,19 @@
     align-items: center;
     padding: 10px;
     gap: 12px;
-    transition: color .2s ease;
+    transition: color 0.2s ease;
     @include hover {
       color: var(--main);
     }
     &--sub {
       font-size: 12px;
       padding: 12px 10px;
+    }
+    &._spoller-active {
+      color: var(--main);
+      .header__catalog-arrow {
+        transform: rotate(0deg);
+      }
     }
     &:not(:last-child) {
       border-bottom: 1px solid var(--iron);
@@ -271,6 +354,20 @@
       left: 234px;
       top: 1px;
     }
+    @include tablet {
+      position: static !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+      width: 100%;
+      border: none !important;
+      &--sub {
+        padding-left: 15px;
+      }
+      &--sub-end {
+        padding-left: 30px;
+      }
+    }
   }
   &__category-icon {
     width: 14px;
@@ -282,6 +379,7 @@
     width: 10px;
     height: 10px;
     margin-left: auto;
+    transition: transform .2s ease;
   }
   &__nav-list {
     @include flex-between;
@@ -290,6 +388,13 @@
     padding: 0px 35px 0px 65px;
     @include desktop {
       padding: 0 15px;
+    }
+    @include tablet {
+      padding: 0;
+      flex-direction: column;
+      gap: 15px;
+      align-items: start;
+      justify-content: start;
     }
     a {
       position: relative;
@@ -304,6 +409,9 @@
       }
       @include laptop {
         font-size: 12px;
+      }
+      @include tablet {
+        font-size: 16px;
       }
       &::before {
         position: absolute;
