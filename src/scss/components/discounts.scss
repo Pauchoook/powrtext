@@ -1,0 +1,77 @@
+.discounts {
+  position: relative;
+  padding-bottom: 40px;
+  @include desktop-min {
+    padding: 80px 0px;
+  }
+  @include mobile {
+    padding: 50px 0px 70px 0px;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  &__title {
+    font-size: 43px;
+    max-width: 185px;
+    line-height: 30px;
+    color: var(--main);
+    span {
+      font-size: 23px;
+    }
+    @include desktop-min {
+      position: absolute;
+      background-color: var(--main);
+      color: white;
+      padding: 30px 12px;
+      line-height: 50px;
+      font-size: 57px;
+      max-height: 275px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      right: 0;
+      span {
+        font-size: 31px
+      }
+    }
+    @include mobile-min {
+      font-size: 40px
+      span {
+        font-size: 26px
+      }
+    }
+  }
+  &__list {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex: 1;
+    @include desktop-min {
+      padding-right: 150px;
+      justify-content: start;
+      gap: 30px;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__icon {
+    width: 85px;
+    @include mobile-min {
+      width: 60px;
+    }
+  }
+  &__content {
+    display: block;
+    font-weight: 500;
+    font-size: 23px;
+    max-width: 180px;
+    color: black;
+    @include mobile-min {
+      font-size: 18px;
+    }
+  }
+}

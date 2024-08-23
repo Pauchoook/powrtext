@@ -1,19 +1,41 @@
 @mixin flex-center {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin flex-between {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @mixin hover {
-   @media (any-hover: hover) {
-     &:hover {
-       @content;
-     }
-   }
- }
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin overflow-text($number) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    height: 14px;
+    background-color: var(--alto);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--main);
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: var(--alto);
+  }
+}

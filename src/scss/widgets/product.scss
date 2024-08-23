@@ -1,0 +1,25 @@
+.product {
+  position: relative;
+  padding: 15px 12px;
+  border: 1px solid var(--silver);
+  max-width: 250px;
+  width: 100%;
+  border-radius: 5px;
+  &__img {
+    display: block;
+    width: 195px;
+    margin-bottom: 10px;
+  }
+  &__title {
+    @include overflow-text(3);
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  &__price {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}

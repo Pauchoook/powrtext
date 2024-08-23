@@ -1,0 +1,31 @@
+.form {
+  &__input {
+    font-size: 18px;
+    padding: 18px;
+    color: var(--dusty);
+    border-radius: 5px;
+    border: 1px solid var(--dusty);
+    &::placeholder {
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+  &__politic {
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: var(--dusty);
+    a {
+      text-decoration: underline;
+      @include hover {
+        color: var(--main);
+      }
+    }
+  }
+  &__btn {
+    font-size: 18px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+}

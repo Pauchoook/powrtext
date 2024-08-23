@@ -1,0 +1,35 @@
+.catalog {
+  padding-bottom: 60px;
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
+    @include laptop {
+      margin-right: -15px;
+    }
+  }
+  &__item-title {
+    margin-bottom: 20px;
+    @include tablet {
+      text-align: center;
+    }
+  }
+  &__item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 47px;
+    row-gap: 30px;
+    @include laptop {
+      gap: 40px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-right: 15px;
+      padding-bottom: 50px;
+      @include scrollbar;
+      .product {
+        flex-shrink: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.seo {
+  padding-bottom: 70px;
+  &__container {
+    display: flex;
+    gap: 50px;
+    @include tablet {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  &__item {
+    flex: 1;
+    @include tablet {
+      flex: none;
+    }
+  }
+  &__title {
+    color: black;
+    margin-bottom: 20px;
+  }
+  &__content {
+    margin: 0;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,223 @@
+.offer {
+  display: flex;
+  align-items: end;
+  padding-bottom: 100px;
+  @include laptop {
+    flex-direction: column;
+    row-gap: 45px;
+  }
+  &__about {
+    padding: 30px 70px 50px 70px;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--main);
+    overflow: hidden;
+    flex: 0 1 830px;
+    @include desktop {
+      flex-basis: 700px;
+    }
+    @include desktop-min {
+      flex-basis: 490px;
+      padding: 30px;
+    }
+    @include laptop {
+      flex: none;
+      width: 100%;
+    }
+  }
+  &__about-title {
+    margin-bottom: 20px;
+    @include laptop {
+      text-align: center;
+    }
+  }
+  &__about-content {
+    font-size: 14px;
+    max-width: 685px;
+    margin: 0px 0px 70px 0px;
+    @include desktop-min {
+      margin-bottom: 30px;
+    }
+  }
+  &__slider {
+    width: 100%;
+    height: 320px;
+    @include desktop-min {
+      height: 260px;
+    }
+    @include laptop {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    @include mobile {
+      height: 190px;
+    }
+  }
+  &__slide {
+  }
+  &__slide-img {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__slider-pagination {
+    display: flex;
+    margin-top: 10px;
+    gap: 30px;
+    @include desktop {
+      gap: 20px;
+      row-gap: 15px;
+      flex-wrap: wrap;
+    }
+    @include laptop {
+      justify-content: center;
+    }
+  }
+  &__pagination-btn {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    @include hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+    &.active {
+      &::before {
+        opacity: 1;
+      }
+    }
+    @include desktop {
+      width: 80px;
+      height: 80px;
+    }
+    @include tablet {
+      width: 60px;
+      height: 60px;
+      border-radius: 3px;
+      &::before {
+        border-radius: 3px !important;
+      }
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      border: 2px solid white;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 10;
+    }
+  }
+  &__pagination-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__trading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    flex: 1;
+    @include laptop {
+      padding: 0 25px;
+      width: 100%;
+    }
+  }
+  &__trading-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    padding: 25px 60px 60px 60px;
+    max-width: 630px;
+    width: 100%;
+    background-color: var(--light-gray);
+    margin: 0 auto;
+    @include desktop-min {
+      max-width: 400px;
+    }
+    @include tablet {
+      padding-top: 25px 35px;
+    }
+  }
+  &__trading-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  &__trading-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  &__trading-btn {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    gap: 40px;
+    font-weight: 300;
+    font-size: 30px;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+    span {
+      display: block;
+    }
+    @include hover {
+      color: var(--main);
+    }
+    @include desktop {
+      font-size: 22px;
+      gap: 20px;
+    }
+    @include tablet {
+      font-size: 18px;
+      gap: 10px
+    }
+    @include mobile-min {
+      font-size: 16px
+    }
+  }
+  &__trading-play {
+    @include flex-center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: var(--main);
+    @include desktop {
+      width: 60px;
+      height: 60px;
+    }
+    @include mobile {
+      width: 45px;
+      height: 45px;
+    }
+    @include mobile-min {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &__trading-play-icon {
+    color: white;
+    width: 30px;
+    height: 30px;
+    @include desktop {
+      width: 20px;
+      height: 20px;
+    }
+    @include mobile {
+      width: 15px;
+      height: 15px;
+    }
+    @include mobile-min {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

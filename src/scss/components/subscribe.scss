@@ -1,0 +1,63 @@
+.subscribe {
+  padding-bottom: 60px;
+  &__body {
+    @include flex-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid var(--main);
+    @include desktop-min {
+      flex-direction: column;
+    }
+    @include mobile {
+      padding: 25px;
+    }
+  }
+  &__info {
+    max-width: 675px;
+    @include desktop {
+      max-width: 450px;
+    }
+    @include desktop-min {
+      text-align: center;
+      max-width: none;
+    }
+  }
+  &__title {
+    margin-bottom: 15px;
+  }
+  &__content {
+    font-size: 20px;
+    margin: 0;
+    @include laptop {
+      font-size: 18px;
+    }
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 630px;
+    width: 100%;
+    gap: 30px;
+    row-gap: 12px;
+    @include tablet {
+      justify-content: center;
+    }
+  }
+  &__input {
+    flex: 0 1 calc(50% - 15px);
+    @include tablet {
+      flex-basis: 320px;
+    }
+  }
+  &__btn {
+    flex: 0 1 calc(50% - 15px);
+    @include tablet {
+      flex-basis: 320px;
+    }
+  }
+}

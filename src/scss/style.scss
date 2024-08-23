@@ -13,10 +13,24 @@
 @import "./ui/dropdown";
 @import "./ui/title";
 @import "./ui/input";
+@import "./ui/form";
+@import "./ui/modal";
+
+// widgets
+@import "./widgets/product";
+@import "./widgets/modal-connection";
 
 // components
 @import "./components/header";
 
 @import "./components/hero";
+@import "./components/discounts";
+@import "./components/category";
+@import "./components/offer";
+@import "./components/cooperation";
+@import "./components/catalog";
+@import "./components/news";
+@import "./components/seo";
+@import "./components/subscribe";
 
 @import "./components/footer";
