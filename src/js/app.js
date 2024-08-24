@@ -7,6 +7,8 @@ import burger from "./files/burger.js";
 import slider from "./files/slider.js";
 import gallery from "./files/gallery.js";
 import modal from "./files/modal.js";
+import range from "./files/range.js";
+import navFilter from "./files/navFilter.js";
 
 functions.isWebp();
 spoller();
@@ -16,3 +18,5 @@ spoller();
 slider();
 gallery();
 modal();
+range();
+navFilter();

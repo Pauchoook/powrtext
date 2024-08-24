@@ -1,0 +1,413 @@
+.category-detail {
+  position: relative;
+  padding: 25px 0px 75px 0px;
+  &__wrapper {
+    display: flex;
+    gap: 45px;
+  }
+  &__sidebar-wrapper {
+    position: relative;
+    max-width: 330px;
+    width: 100%;
+    @include desktop-min {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding: 20px;
+      background-color: var(--light-gray);
+      overflow-y: auto;
+      max-width: 380px;
+      transform: translateX(-380px);
+      z-index: 100;
+      transition: transform 0.5s ease;
+      &.open {
+        transform: translateX(0px);
+      }
+    }
+  }
+  &__sidebar {
+    position: sticky;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include desktop-min {
+      position: static;
+    }
+  }
+  &__filter-close {
+    position: absolute;
+    display: none;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    @include desktop-min {
+      display: flex;
+    }
+  }
+  &__filter-close-wrapper {
+    @include flex-center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    span {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &__spollers {
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    padding: 15px 0px;
+    overflow: hidden;
+  }
+  &__spoller-item {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      left: 15px;
+      right: 15px;
+      bottom: 0;
+      height: 1px;
+      background-color: var(--dusty);
+    }
+  }
+  &__spoller-btn {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    gap: 20px;
+    width: 100%;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 18px;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+    &--current {
+      font-size: 22px;
+      color: var(--main);
+    }
+    @include hover {
+      color: white;
+      background-color: var(--main);
+      .category-detail__sidebar-arrow {
+        color: white;
+      }
+    }
+    &._spoller-active {
+      color: white;
+      background-color: var(--main);
+      .category-detail__sidebar-arrow {
+        transform: rotate(180deg);
+        color: white;
+      }
+    }
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+  &__spoller-icon {
+    width: 40px;
+  }
+  &__sidebar-arrow {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    color: var(--main);
+    transition: transform 0.2s ease;
+  }
+  &__spoller-list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 10px 75px;
+    gap: 20px;
+    a {
+      @include hover {
+        font-size: 16px;
+        color: var(--main);
+      }
+    }
+  }
+  &__sidebar-item {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--light-gray);
+    width: 100%;
+  }
+  &__sidebar-btn {
+    @include flex-between;
+    width: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+    transition: color 0.2s ease;
+    &._spoller-active {
+      .category-detail__sidebar-arrow {
+        transform: rotate(180deg);
+      }
+    }
+    @include hover {
+      color: var(--main);
+    }
+  }
+  &__sidebar-spoller {
+    padding-top: 20px;
+  }
+  &__form-price {
+    @include flex-between;
+    flex-wrap: wrap;
+    row-gap: 50px;
+  }
+  &__form-content {
+    font-size: 16px;
+  }
+  &__price-input {
+    width: 100px;
+    border: 1px solid var(--silver);
+    padding: 5px 12px;
+    border-radius: 5px;
+    &::placeholder {
+      color: var(--silver);
+    }
+  }
+  &__price-slider {
+    cursor: pointer;
+    flex: 100%;
+    height: 4px !important;
+    background: #d9d9d9 !important;
+    box-shadow: none !important;
+    border: none !important;
+    .noUi-handle {
+      cursor: pointer;
+      width: 17px !important;
+      height: 17px !important;
+      background-color: var(--main);
+      border-radius: 50%;
+      box-shadow: none !important;
+      border: none !important;
+      &-upper {
+        transform: translateX(-17px);
+      }
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    .noUi-touch-area {
+      display: none;
+    }
+  }
+  &__form-property {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__input-property {
+    display: none;
+    &:checked + label {
+      &::before {
+        background-color: var(--main);
+      }
+    }
+  }
+  &__label-property {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--main);
+      border-radius: 3px;
+    }
+  }
+  &__main {
+    flex: 1;
+  }
+  &__main-head {
+    @include flex-between;
+    margin-bottom: 10px;
+    .breadcrumbs {
+      margin-bottom: 0;
+    }
+  }
+  &__filter-btn {
+    display: none;
+    font-size: 16px;
+    @include desktop-min {
+      display: block;
+    }
+  }
+  &__title {
+    color: var(--main);
+  }
+  &__content {
+    font-size: 14px;
+    margin: 0px 0px 15px 0px;
+  }
+  &__subcategory {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+    @include tablet {
+      gap: 20px;
+      li {
+        flex: 0 1 calc(50% - 10px);
+      }
+    }
+    @include tablet-min {
+      justify-content: center;
+      li {
+        flex-basis: 400px;
+      }
+    }
+  }
+  &__subcategory-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--light-gray);
+    width: 220px;
+    transition: transform 0.2s ease;
+    @include hover {
+      transform: scale(1.08);
+    }
+    @include tablet {
+      flex-direction: row;
+      justify-content: start;
+      width: 100%;
+      padding: 10px 15px;
+    }
+    @include tablet-min {
+      justify-content: center;
+    }
+  }
+  &__subcategory-title {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+  }
+  &__catalog {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    @include desktop {
+      margin: 0 auto;
+      max-width: 790px;
+    }
+    @include desktop-min {
+      max-width: none;
+    }
+    @include mobile-min {
+      gap: 10px;
+    }
+  }
+  &__product {
+    @include tablet-min {
+      width: calc(50% - 10px);
+    }
+    @include mobile {
+      .product__title {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .product__price {
+        font-size: 18px;
+      }
+      .btn {
+        font-size: 18px;
+      }
+    }
+    @include mobile-min {
+      width: calc(50% - 5px);
+      padding: 10px;
+      .btn {
+        font-size: 14px;
+      }
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+    margin-top: 20px;
+    @include tablet {
+      justify-content: center;
+    }
+    a {
+      @include flex-center;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid var(--alto);
+      font-size: 20px;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+      @include hover {
+        background-color: var(--main);
+        color: white;
+        border-color: var(--main);
+      }
+      &.active {
+        background-color: var(--main);
+        font-weight: 700;
+        color: white;
+        border-color: var(--main);
+      }
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+  }
+  &__down-category {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
+    @include laptop {
+      justify-content: center;
+    }
+  }
+  &__down-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    background-color: var(--light-gray);
+    color: black;
+    font-size: 14px;
+    width: 300px;
+    padding: 5px 13px;
+    transition: color .2s ease, background-color .2s ease;
+    @include hover {
+      color: white;
+      background-color: var(--main);
+    }
+  }
+}

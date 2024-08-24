@@ -1,0 +1,14 @@
+.breadcrumbs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+  li {
+    font-size: 15px;
+  }
+  a {
+    @include hover {
+      color: var(--main);
+      text-decoration: underline;
+    }
+  }
+}

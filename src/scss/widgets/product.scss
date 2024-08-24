@@ -5,6 +5,18 @@
   max-width: 250px;
   width: 100%;
   border-radius: 5px;
+  &__discount {
+    position: absolute;
+    display: block;
+    font-weight: 700;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: var(--main);
+    color: white;
+    right: 10px;
+    top: 10px;
+  }
   &__img {
     display: block;
     width: 195px;
