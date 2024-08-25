@@ -351,40 +351,6 @@
       }
     }
   }
-  &__pagination {
-    display: flex;
-    justify-content: right;
-    gap: 5px;
-    margin-top: 20px;
-    @include tablet {
-      justify-content: center;
-    }
-    a {
-      @include flex-center;
-      width: 40px;
-      height: 40px;
-      border-radius: 5px;
-      border: 1px solid var(--alto);
-      font-size: 20px;
-      transition:
-        color 0.2s ease,
-        background-color 0.2s ease;
-      @include hover {
-        background-color: var(--main);
-        color: white;
-        border-color: var(--main);
-      }
-      &.active {
-        background-color: var(--main);
-        font-weight: 700;
-        color: white;
-        border-color: var(--main);
-      }
-      @include tablet {
-        font-size: 16px;
-      }
-    }
-  }
   &__down-category {
     display: flex;
     flex-wrap: wrap;
