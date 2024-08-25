@@ -206,6 +206,11 @@
         if (window.matchMedia("(min-width: 744px)").matches) {
             const buttons = document.querySelectorAll(".dropdown-btn");
             if (buttons.length) {
+                if (window.location.pathname === "/") {
+                    document.querySelector("#dropdown-category").classList.add("open");
+                    document.querySelector("#dropdown-category").querySelector(".dropdown__el").classList.add("open");
+                    document.addEventListener("click", closeDropdown);
+                }
                 buttons.forEach((btn => {
                     btn.addEventListener("click", (e => {
                         e.stopPropagation();
@@ -4015,6 +4020,34 @@
                 breakpoints: {
                     744: {
                         spaceBetween: 50
+                    }
+                }
+            });
+        }
+        const commoditySlider = document.querySelector(".commodity__slider");
+        if (commoditySlider) {
+            const buttonsPagination = document.querySelectorAll(".commodity__pagination-btn");
+            new Swiper(commoditySlider, {
+                speed: 700,
+                modules: [ Autoplay, Pagination ],
+                autoplay: true,
+                grabCursor: true,
+                slideToClickedSlide: true,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".commodity__gallery-pagination",
+                    clickable: true,
+                    type: "custom",
+                    bulletClass: "commodity__pagination-btn"
+                },
+                on: {
+                    init: () => {
+                        const firstBtnPagination = document.querySelector(".commodity__pagination-btn");
+                        firstBtnPagination.classList.add("active");
+                    },
+                    slideChange: ({activeIndex}) => {
+                        buttonsPagination.forEach((btn => btn.classList.remove("active")));
+                        buttonsPagination[activeIndex].classList.add("active");
                     }
                 }
             });
@@ -10332,37 +10365,41 @@
         const slider = document.getElementById("range-price");
         const minPrice = document.getElementById("min-price");
         const maxPrice = document.getElementById("max-price");
-        nouislider.create(slider, {
-            start: [ 0, 1e4 ],
-            setp: 1,
-            connect: true,
-            range: {
-                min: 0,
-                max: 1e4
-            }
-        });
-        slider.noUiSlider.on("update", ((values, handle) => {
-            const [min, max] = values;
-            minPrice.value = Math.round(min);
-            maxPrice.value = Math.round(max);
-        }));
+        if (slider) {
+            nouislider.create(slider, {
+                start: [ 0, 1e4 ],
+                setp: 1,
+                connect: true,
+                range: {
+                    min: 0,
+                    max: 1e4
+                }
+            });
+            slider.noUiSlider.on("update", ((values, handle) => {
+                const [min, max] = values;
+                minPrice.value = Math.round(min);
+                maxPrice.value = Math.round(max);
+            }));
+        }
     }
     function navFilter() {
         const btnFilter = document.querySelector("#btn-filter");
         const closeFilter = document.querySelector("#close-filter");
         const filter = document.querySelector("#filter");
-        btnFilter.addEventListener("click", (e => {
-            e.stopPropagation();
-            filter.classList.add("open");
-            document.body.classList.add("body-hidden");
-            filter.addEventListener("click", (e => e.stopPropagation()));
-            document.body.addEventListener("click", handleClose);
-        }));
-        closeFilter.addEventListener("click", handleClose);
-        function handleClose() {
-            filter.classList.remove("open");
-            document.body.classList.remove("body-hidden");
-            document.body.removeEventListener("click", handleClose);
+        if (btnFilter) {
+            btnFilter.addEventListener("click", (e => {
+                e.stopPropagation();
+                filter.classList.add("open");
+                document.body.classList.add("body-hidden");
+                filter.addEventListener("click", (e => e.stopPropagation()));
+                document.body.addEventListener("click", handleClose);
+            }));
+            closeFilter.addEventListener("click", handleClose);
+            function handleClose() {
+                filter.classList.remove("open");
+                document.body.classList.remove("body-hidden");
+                document.body.removeEventListener("click", handleClose);
+            }
         }
     }
     isWebp();

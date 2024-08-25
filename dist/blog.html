@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>pauchoo0k</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240825113242">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="body">
+	<header class="header">
+		<div class="container">
+			<div class="header__wrapper">
+				<button class="btn header__btn-burger" id="btn-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<a href="#" class="header__logo">
+					<img src="img/logo.svg" alt="logo" class="header__logo-img" />
+				</a>
+				<form action="#" class="header__form">
+					<input type="text" placeholder="Поиск по товарам..." class="input header__input" />
+					<button class="btn header__form-btn">
+						<svg class="header__form-icon">
+							<use xlink:href="img/icons/icons.svg#icon-search"></use>
+						</svg>
+					</button>
+				</form>
+				<nav class="header__nav-top">
+					<ul class="list header__nav-top-list">
+						<li class="dropdown">
+							<a href="#">
+								<span>О компании</span>
+								<svg class="dropdown__arrow">
+									<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+								</svg>
+							</a>
+							<div class="dropdown__item">
+								<div class="dropdown__body">
+									<ul class="list dropdown__menu">
+										<li>
+											<a href="#">Ссылка на страницу</a>
+										</li>
+										<li>
+											<a href="#">Ссылка на страницу</a>
+										</li>
+										<li>
+											<a href="#">Ссылка на страницу</a>
+										</li>
+										<li>
+											<a href="#">Ссылка на страницу</a>
+										</li>
+										<li>
+											<a href="#">Ссылка на страницу</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#">Доставка и оплата</a>
+						</li>
+						<li>
+							<a href="#">Поставщикам</a>
+						</li>
+						<li>
+							<a href="#">Наши партнеры</a>
+						</li>
+						<li>
+							<a href="#">Вакансии</a>
+						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__contacts">
+					<a href="tel:89999999999" class="header__tel">
+						<svg class="header__tel-icon">
+							<use xlink:href="img/icons/icons.svg#icon-tel"></use>
+						</svg>
+						<span>8 (999) 999-99-99</span>
+					</a>
+					<button class="btn header__btn-order">Заказать звонок</button>
+				</div>
+			</div>
+			<nav class="header__nav" id="burger">
+				<div data-spollers="743,max" class="dropdown header__catalog-parent" id="dropdown-category">
+					<button data-spoller class="dropdown-btn btn header__catalog-btn">
+						<div class="header__catalog-burger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<span>Каталог</span>
+					</button>
+					<div class="dropdown__el header__dropdown-catalog">
+						<ul class="list header__catalog-list">
+							<li class="dropdown__parent">
+								<div data-spoller class="header__catalog-list-btn">
+									<img src="img/mini/category-icon.svg" alt="icon" class="header__category-icon" />
+									<a href="#">Категория страницы 1</a>
+									<svg class="header__catalog-arrow">
+										<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+									</svg>
+								</div>
+								<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub dropdown__el--sub">
+									<ul class="list header__catalog-list">
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 1</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 2</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 3</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="dropdown__parent">
+								<div data-spoller class="header__catalog-list-btn">
+									<img src="img/mini/category-icon.svg" alt="icon" class="header__category-icon" />
+									<a href="#">Категория страницы 2</a>
+									<svg class="header__catalog-arrow">
+										<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+									</svg>
+								</div>
+								<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub dropdown__el--sub">
+									<ul class="list header__catalog-list">
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 1</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 2</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 3</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="dropdown__parent">
+								<div data-spoller class="header__catalog-list-btn">
+									<img src="img/mini/category-icon.svg" alt="icon" class="header__category-icon" />
+									<a href="#">Категория страницы 3</a>
+									<svg class="header__catalog-arrow">
+										<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+									</svg>
+								</div>
+								<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub dropdown__el--sub">
+									<ul class="list header__catalog-list">
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 1</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 2</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="dropdown__parent dropdown__parent--sub">
+											<div data-spoller class="header__catalog-list-btn header__catalog-list-btn--sub">
+												<a href="#">Подкатегория страницы 3</a>
+												<svg class="header__catalog-arrow">
+													<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+												</svg>
+											</div>
+											<div class="dropdown__el header__dropdown-catalog header__dropdown-catalog--sub-end dropdown__el--sub-end">
+												<ul class="list header__catalog-list">
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 1</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 2</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+													<li class="dropdown__parent">
+														<a href="#" class="header__catalog-list-btn header__catalog-list-btn--sub">
+															<span>Подподкатегория страницы 3</span>
+															<svg class="header__catalog-arrow">
+																<use xlink:href="img/icons/icons.svg#icon-arrow"></use>
+															</svg>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<ul class="list header__nav-list">
+					<li>
+						<a href="#">О компании</a>
+					</li>
+					<li>
+						<a href="#">Скидки и акции</a>
+					</li>
+					<li>
+						<a href="#">Доставка и оплата</a>
+					</li>
+					<li>
+						<a href="#">Вакансии</a>
+					</li>
+					<li>
+						<a href="#">Поставщикам</a>
+					</li>
+					<li>
+						<a href="#">Полезные статьи</a>
+					</li>
+					<li>
+						<a href="#">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<div data-modal="modal-connection" class="modal modal-connection">
+			<div class="modal__overlay">
+				<div class="modal__window">
+					<button class="btn modal__close">
+						<div class="modal__close-wrapper">
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+					<h2 class="title modal-connection__title">Оставьте заявку!</h2>
+					<p class="modal-connection__content">Мы скоро свяжемся с вами</p>
+					<form action="#" class="modal-connection__form">
+						<input type="tel" name="tel" placeholder="Телефон" class="input form__input modal-connection__input" />
+						<button class="btn btn-main modal-connection__btn form__btn">Отправить</button>
+						<p class="form__politic">
+							Нажимая кнопку вы соглашаетесь с <a href="#">правилами политики конфиденциальности</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- <section class="subscribe">
+  <div class="container">
+    <div class="subscribe__body">
+      <div class="subscribe__info">
+        <h2 class="title title-2 subscribe__title">Подпишитесь на наш дайджест</h2>
+        <p class="subscribe__content">
+          Отберем самые полезные материалы и доставим вам на почту. Все о строительных материалах и
+          электроинструментах
+        </p>
+      </div>
+      <form action="#" class="subscribe__form">
+        <input type="text" placeholder="Ваш email" class="input form__input subscribe__input">
+        <button class="btn btn-main subscribe__btn form__btn">Подписаться</button>
+        <p class="form__politic">
+          Нажимая кнопку вы соглашаетесь с <a href="#">правилами политики конфиденциальности</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+ -->
+	</main>
+	<!-- <footer class="footer">
+  <div class="footer__head">
+    <div class="container footer__head-container">
+      <a href="#" class="footer__logo">
+        <img src="img/logo.svg" alt="logo" class="footer__logo-img" />
+      </a>
+      <ul class="list footer__social">
+        <li>
+          <a href="#">
+            <img src="img/mini/wh.svg" alt="wh" class="footer__social-icon" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/mini/tg.svg" alt="tg" class="footer__social-icon" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/mini/vk.svg" alt="vk" class="footer__social-icon" />
+          </a>
+        </li>
+      </ul>
+      <div class="footer__connection">
+        <a href="mailto:info@domain.ru" class="footer__btn">info@domain.ru</a>
+        <a href="tel:89999999999" class="footer__btn">8 (999) 999-99-99</a>
+        <button data-modal="modal-connection" class="btn btn-modal btn-stroke">
+          Заказать звонок
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <nav class="footer__nav">
+      <ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+			<ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+			<ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+			<ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+			<ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+			<ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+			<ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+			<ul class="list footer__nav-list">
+        <li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+				<li>
+          <a href="#"> Страница 1 </a>
+        </li>
+      </ul>
+    </nav>
+		<div class="footer__bottom">
+			<p class="footer__copyright">COPYRIGHT © 2024 domain.ru, все права защищены. </p>
+			<a href="#" class="footer__politic">Политика конфиденциальности</a>
+		</div>
+  </div>
+</footer>
+ -->
+	<script src="js/app.min.js?_v=20240825113242"></script>
+</body>
+
+</html>

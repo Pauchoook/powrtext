@@ -68,4 +68,33 @@ export default function slider() {
       }
     });
   }
+
+  const commoditySlider = document.querySelector(".commodity__slider");
+  if (commoditySlider) {
+    const buttonsPagination = document.querySelectorAll(".commodity__pagination-btn");
+    const swiper = new Swiper(commoditySlider, {
+      speed: 700,
+      modules: [Autoplay, Pagination],
+      autoplay: true,
+      grabCursor: true,
+      slideToClickedSlide: true,
+      spaceBetween: 10,
+      pagination: {
+        el: ".commodity__gallery-pagination",
+        clickable: true,
+        type: "custom",
+        bulletClass: "commodity__pagination-btn",
+      },
+      on: {
+        init: () => {
+          const firstBtnPagination = document.querySelector(".commodity__pagination-btn");
+          firstBtnPagination.classList.add("active");
+        },
+        slideChange: ({ activeIndex }) => {
+          buttonsPagination.forEach((btn) => btn.classList.remove("active"));
+          buttonsPagination[activeIndex].classList.add("active");
+        },
+      },
+    });
+  }
 }

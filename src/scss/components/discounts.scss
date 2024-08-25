@@ -1,6 +1,14 @@
 .discounts {
   position: relative;
   padding-bottom: 40px;
+  &--bg {
+    .discounts__title {
+      color: black;
+    }
+    .discounts__content {
+      color: white;
+    }
+  }
   @include desktop-min {
     padding: 80px 0px;
   }
@@ -11,6 +19,47 @@
     display: flex;
     align-items: center;
     gap: 60px;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 100px;
+    background-color: var(--main);
+    color: white;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: var(--gray);
+      top: -1px;
+      left: 0;
+      bottom: -1px;
+      width: 335px;
+      clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
+      z-index: -1;
+    }
+    @include desktop {
+      position: static;
+      padding: 20px;
+      &::before {
+        width: 280px;
+      }
+      .discounts__title {
+        color: white;
+      }
+      .discounts__content {
+        color: black;
+      }
+    }
+    @include desktop-min {
+      padding: 0;
+      background-color: transparent;
+      &::before {
+        display: none;
+      }
+    }
   }
   &__title {
     font-size: 43px;
@@ -32,13 +81,12 @@
       transform: rotate(180deg);
       right: 0;
       span {
-        font-size: 31px
+        font-size: 31px;
       }
     }
     @include mobile-min {
-      font-size: 40px
-      span {
-        font-size: 26px
+      font-size: 40px span {
+        font-size: 26px;
       }
     }
   }

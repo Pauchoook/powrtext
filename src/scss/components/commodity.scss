@@ -1,0 +1,189 @@
+.commodity {
+  padding: 20px 0px 50px 0px;
+  &__title {
+    max-width: 960px;
+    margin-bottom: 30px;
+    color: var(--main);
+  }
+  &__body {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    @include desktop {
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+  &__gallery {
+    flex: 0 1 550px;
+    overflow: hidden;
+    @include laptop {
+      flex-basis: 50%;
+    }
+    @include tablet {
+      flex-basis: 550px;
+    }
+  }
+  &__slider {
+    width: 100%;
+    height: 550px;
+    border-radius: 5px;
+    border: 1px solid var(--silver);
+    .swiper-slide {
+      @include flex-center;
+    }
+    @include laptop {
+      height: 350px;
+    }
+    @include mobile-min {
+      height: 250px;
+    }
+  }
+  &__img {
+    max-width: 90%;
+    max-height: 90%;
+    @include laptop {
+      width: auto;
+      height: auto;
+    }
+  }
+  &__gallery-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 30px;
+    @include laptop {
+      gap: 15px;
+    }
+  }
+  &__pagination-btn {
+    @include flex-between;
+    width: 110px;
+    height: 110px;
+    border-radius: 5px;
+    border: 1px solid var(--silver);
+    transition: border-color 0.2s ease;
+    &.active {
+      border-color: var(--main);
+    }
+    @include hover {
+      border-color: var(--main);
+    }
+    @include laptop {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  &__pagination-img {
+    max-width: 90%;
+  }
+  &__advantages {
+    flex: 0 1 495px;
+    @include desktop {
+      order: 3;
+      flex-basis: 600px;
+    }
+  }
+  &__advnatages-item {
+    @include flex-between;
+    padding: 12px 15px;
+    border-radius: 5px;
+    &:nth-child(even) {
+      background-color: var(--gray);
+    }
+  }
+  &__advantages-title {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  &__advantages-value {
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+  }
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 330px;
+    border-radius: 5px;
+    background-color: var(--gray);
+    padding: 20px;
+    @include desktop {
+      order: 2;
+    }
+    @include mobile {
+      flex-basis: calc(100%);
+    }
+  }
+  &__price-title {
+    font-size: 35px;
+    color: var(--main);
+    margin-bottom: 20px;
+    text-align: center;
+    @include tablet {
+      font-size: 28px;
+    }
+  }
+  &__price-list {
+    width: 100%;
+  }
+  &__price-item {
+    padding: 15px 0px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--silver);
+    }
+    @include laptop {
+      font-size: 18px;
+    }
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+  &__price-content {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    margin: 20px 0px 0px 0px;
+  }
+  &__price-btn {
+    margin: 30px 0px 12px 0px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 65px;
+  }
+  &__info {
+    max-width: 700px;
+    @include desktop {
+      max-width: 550px;
+    }
+    @include desktop-min {
+      max-width: none;
+    }
+  }
+  &__info-item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  &__footer-title {
+    margin-bottom: 15px;
+    color: black;
+  }
+  &__info-content {
+    font-size: 14px;
+  }
+  &__footer-advantages {
+    flex: 1;
+  }
+}

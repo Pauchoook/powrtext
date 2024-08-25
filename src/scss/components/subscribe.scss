@@ -44,8 +44,14 @@
     width: 100%;
     gap: 30px;
     row-gap: 12px;
+    .form__politic {
+      text-align: left;
+    }
     @include tablet {
       justify-content: center;
+      .form__politic {
+        text-align: center;
+      }
     }
   }
   &__input {

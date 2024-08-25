@@ -1,10 +1,7 @@
 .footer {
   position: relative;
-  padding: 40px 0px 60px 0px;
+  padding: 40px 0px 0px 0px;
   z-index: 1;
-  @include tablet {
-    padding-bottom: 90px;
-  }
   @include mobile {
     &::before {
       position: absolute;
