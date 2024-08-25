@@ -8784,6 +8784,7 @@
     });
     function gallery() {
         Oe.bind('[data-fancybox="about-company"]', {});
+        Oe.bind('[data-fancybox="gallery"]', {});
     }
     function modal() {
         const buttonsModal = document.querySelectorAll(".btn-modal");
