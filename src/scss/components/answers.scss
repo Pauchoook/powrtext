@@ -1,0 +1,84 @@
+.answers {
+  padding-bottom: 75px;
+  @include tablet {
+    padding-bottom: 60px;
+  }
+  &__title {
+    margin-bottom: 50px;
+    font-size: 35px;
+    @include tablet {
+      font-size: 30px;
+      text-align: center;
+      max-width: 355px;
+      margin: 0px auto 50px auto;
+    }
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 35px;
+    @include laptop {
+      gap: 0;
+    }
+  }
+  &__item {
+    flex: 0 1 calc(50% - 20px);
+    @include laptop {
+      flex-basis: 100%;
+      padding: 25px 0px;
+      &:not(:last-child) {
+        border-bottom: 1px solid #d9d9d9;
+      }
+    }
+  }
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    font-weight: 500;
+    font-size: 25px;
+    color: black;
+    width: 100%;
+    &._spoller-active {
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+    &::before, &::after {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 1px;
+      transition: transform .4s ease;
+      left: 0;
+      background-color: var(--main);
+    }
+    &::before {
+      transform: rotate(90deg);
+    }
+    @include laptop {
+      font-size: 20px;
+    }
+    @include mobile {
+      padding-left: 50px;
+    }
+
+  }
+  &__spoller {
+    padding-top: 15px;
+    padding-left: 60px;
+  }
+  &__spoller-content {
+    font-size: 16px;
+    margin: 0;
+    @include tablet {
+      font-size: 14px;
+    }
+    @include mobile {
+      font-size: 12px;
+      padding-left: 50px;
+    }
+  }
+}

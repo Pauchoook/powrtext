@@ -9,6 +9,7 @@ import gallery from "./files/gallery.js";
 import modal from "./files/modal.js";
 import range from "./files/range.js";
 import navFilter from "./files/navFilter.js";
+import tab from "./files/tab.js";
 
 functions.isWebp();
 spoller();
@@ -20,3 +21,4 @@ gallery();
 modal();
 range();
 navFilter();
+tab();

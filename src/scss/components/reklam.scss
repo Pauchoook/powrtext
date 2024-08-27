@@ -1,0 +1,235 @@
+.reklam {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0px;
+  @include tablet {
+    background-color: var(--gray);
+  }
+  @include mobile {
+    padding-top: 15px;
+  }
+  &__points {
+    position: absolute;
+    width: 515px;
+    right: -200px;
+    bottom: 0;
+    z-index: -1;
+    @include desktop {
+      display: none;
+    }
+  }
+  &__body {
+    position: relative;
+    border-radius: 5px;
+    background-color: var(--gray);
+    padding: 30px 40px;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      border-radius: 0 0 0 480px;
+      width: 628px;
+      height: 427px;
+      background: rgba(11, 132, 97, 0.1);
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+    @include tablet {
+      padding: 0;
+      &::before {
+        width: 100%;
+        height: 570px;
+        top: -40px;
+        right: -15px;
+      }
+    }
+    @include mobile {
+      &::before {
+        width: 322px;
+        height: 451px;
+      }
+    }
+  }
+  &__decor {
+    position: absolute;
+    top: 50px;
+    right: -400px;
+    width: 815px;
+    z-index: -1;
+    @include desktop {
+      right: -200px;
+    }
+    @include desktop-min {
+      width: 620px;
+    }
+    @include laptop {
+      width: 570px;
+      left: calc(50% - 275px);
+      top: 245px;
+    }
+    @include tablet {
+      left: 0;
+      top: 225px;
+    }
+    @include mobile {
+      top: 240px;
+    }
+  }
+  &__head {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    z-index: 10;
+    @include tablet {
+      margin-bottom: 65px;
+    }
+    @include mobile {
+      margin-bottom: 90px;
+    }
+  }
+  &__logo {
+    display: block;
+    width: 265px;
+    @include tablet {
+      width: 240px;
+    }
+    @include mobile {
+      width: 180px;
+    }
+  }
+  &__logo-img {
+    width: 100%;
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    color: black;
+    gap: 5px;
+  }
+  &__tel {
+    font-weight: 700;
+    font-size: 43px;
+    transition: color 0.2s ease;
+    @include hover {
+      color: var(--main);
+    }
+    @include desktop {
+      font-size: 36px;
+    }
+    @include laptop {
+      font-size: 32px;
+    }
+    @include tablet {
+      @include flex-center;
+      border-radius: 5px;
+      width: 47px;
+      height: 47px;
+      background-color: var(--main);
+      span {
+        display: none;
+      }
+    }
+  }
+  &__tel-icon {
+    display: none;
+    width: 40px;
+    height: 40px;
+    color: white;
+    @include tablet {
+      display: block;
+    }
+  }
+  &__btn-order {
+    display: block;
+    width: fit-content;
+    font-size: 26px;
+    border-bottom: 1px dashed var(--main);
+    transition: color 0.2s ease;
+    @include hover {
+      color: var(--main);
+    }
+    @include desktop {
+      font-size: 22px;
+    }
+    @include laptop {
+      font-size: 18px;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  &__title {
+    max-width: 565px;
+    margin-bottom: 30px;
+    span {
+      color: var(--main);
+    }
+    @include laptop {
+      max-width: 540px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &__btn {
+    position: relative;
+    display: block;
+    z-index: 10;
+    @include laptop {
+      margin: 0px auto;
+    }
+  }
+  &__list {
+    position: relative;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    margin-top: 85px;
+    gap: 35px;
+    row-gap: 20px;
+    z-index: 10;
+    @include laptop {
+      margin-top: 250px;
+    }
+    @include mobile {
+      margin-top: 200px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      width: 275px;
+      gap: 12px;
+      flex: 1;
+      @include desktop-min {
+        flex: 0 1 calc(50% - 20px);
+      }
+      @include tablet {
+        gap: 8px;
+      }
+      @include mobile {
+        flex-basis: 100%;
+        gap: 30px;
+      }
+    }
+  }
+  &__list-icon {
+    width: 70px;
+  }
+  &__list-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 23px;
+    max-width: 180px;
+    span {
+      font-weight: 700;
+    }
+    @include desktop-min {
+      font-size: 20px;
+    }
+  }
+}

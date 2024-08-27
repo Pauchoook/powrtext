@@ -2,6 +2,13 @@
   position: relative;
   padding: 40px 0px 0px 0px;
   z-index: 1;
+  &--reklam {
+    position: static;
+    padding: 0;
+    .footer__bottom {
+      border-top: none;
+    }
+  }
   @include mobile {
     &::before {
       position: absolute;
@@ -142,6 +149,9 @@
   &__copyright {
     margin: 0;
     font-size: 16px;
+    @include mobile {
+      font-size: 14px;
+    }
   }
   &__politic {
     display: block;

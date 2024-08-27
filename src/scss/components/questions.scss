@@ -1,0 +1,56 @@
+.questions {
+  padding: 25px 0px;
+  background-color: var(--gray);
+  &__container {
+    @include flex-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    @include desktop-min {
+      justify-content: center;
+    }
+  }
+  &__title {
+    font-size: 35px;
+    max-width: 515px;
+    @include desktop-min {
+      text-align: center;
+    }
+    @include tablet {
+      font-size: 30px;
+    }
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 655px;
+    gap: 25px;
+    row-gap: 20px;
+    .form__politic {
+      text-align: left;
+    }
+    @include desktop-min {
+      .form__politic {
+        text-align: center;
+      }
+    }
+    @include tablet-min {
+      max-width: 320px;
+    }
+  }
+  &__form-input {
+    flex: 0 1 calc(50% - 15px);
+    @include tablet-min {
+      flex-basis: 100%;
+    }
+  }
+  &__form-btn {
+    flex: 0 1 calc(50% - 15px);
+    @include tablet-min {
+      flex-basis: 100%;
+      height: 58px;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.advantages {
+  padding-bottom: 85px;
+  @include laptop {
+    padding-top: 60px;
+  }
+  &__title {
+    margin-bottom: 75px;
+    font-size: 35px;
+    @include laptop {
+      font-size: 30px;
+    }
+    @include tablet {
+      font-size: 22px;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+    span {
+      color: var(--main);
+    }
+  }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex: 0 1 calc(50% - 20px);
+    @include desktop-min {
+      flex-direction: column;
+      align-items: start;
+    }
+    @include tablet-min {
+      flex-basis: 100%;
+      gap: 12px
+    }
+  }
+  &__video {
+    @include flex-center;
+    position: relative;
+    overflow: hidden;
+    width: 235px;
+    height: 140px;
+    border-radius: 10px;
+    @include tablet-min {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  &__video-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__video-btn {
+    @include flex-center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--main);
+  }
+  &__video-icon {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
+  &__item-info {
+    flex: 0 1 415px;
+    @include desktop-min {
+      flex: none;
+    }
+  }
+  &__item-title {
+    margin-bottom: 5px;
+    @include desktop {
+      font-size: 25px;
+    }
+    @include tablet {
+      font-size: 20px;
+    }
+    @include tablet-min {
+      font-size: 18px;
+    }
+  }
+  &__item-content {
+    font-size: 16px;
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+}

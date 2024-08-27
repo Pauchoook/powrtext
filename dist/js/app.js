@@ -239,21 +239,23 @@
     function burger() {
         const burgerBtn = document.querySelector("#btn-burger");
         const burger = document.querySelector("#burger");
-        burgerBtn.addEventListener("click", (e => {
-            e.stopPropagation();
-            if (burger.classList.contains("open")) handleClose(); else {
-                burger.classList.add("open");
-                burgerBtn.classList.add("active");
-                document.body.classList.add("body-hidden");
-                burger.addEventListener("click", (e => e.stopPropagation()));
-                document.body.addEventListener("click", handleClose);
+        if (burger) {
+            burgerBtn.addEventListener("click", (e => {
+                e.stopPropagation();
+                if (burger.classList.contains("open")) handleClose(); else {
+                    burger.classList.add("open");
+                    burgerBtn.classList.add("active");
+                    document.body.classList.add("body-hidden");
+                    burger.addEventListener("click", (e => e.stopPropagation()));
+                    document.body.addEventListener("click", handleClose);
+                }
+            }));
+            function handleClose() {
+                burger.classList.remove("open");
+                document.body.classList.remove("body-hidden");
+                burgerBtn.classList.remove("active");
+                document.body.removeEventListener("click", handleClose);
             }
-        }));
-        function handleClose() {
-            burger.classList.remove("open");
-            document.body.classList.remove("body-hidden");
-            burgerBtn.classList.remove("active");
-            document.body.removeEventListener("click", handleClose);
         }
     }
     function ssr_window_esm_isObject(obj) {
@@ -8785,6 +8787,7 @@
     function gallery() {
         Oe.bind('[data-fancybox="about-company"]', {});
         Oe.bind('[data-fancybox="gallery"]', {});
+        Oe.bind('[data-fancybox="advantages-gallery"]', {});
     }
     function modal() {
         const buttonsModal = document.querySelectorAll(".btn-modal");
@@ -10403,6 +10406,22 @@
             }
         }
     }
+    function tab() {
+        const btnTabs = document.querySelectorAll(".btn-tab");
+        if (btnTabs.length) btnTabs.forEach((btn => {
+            btn.addEventListener("click", (() => {
+                const {tab: tabId} = btn.dataset;
+                const parentTab = btn.closest(".parent-tab");
+                const currentButtons = parentTab.querySelectorAll(".btn-tab");
+                const tabs = parentTab.querySelectorAll(".tab");
+                const currentTab = document.querySelector(`.tab[data-tab=${tabId}]`);
+                currentButtons.forEach((b => b.classList.remove("active")));
+                tabs.forEach((t => t.classList.remove("open")));
+                btn.classList.add("active");
+                currentTab.classList.add("open");
+            }));
+        }));
+    }
     isWebp();
     spoller();
     dropdown();
@@ -10413,4 +10432,5 @@
     modal();
     range();
     navFilter();
+    tab();
 })();

@@ -1,0 +1,91 @@
+.products {
+  position: relative;
+  padding-bottom: 170px;
+  @include laptop {
+    padding-bottom: 320px;
+  }
+  @include tablet {
+    padding-bottom: 0;
+  }
+  &__points {
+    position: absolute;
+    width: 515px;
+    left: -140px;
+    bottom: -170px;
+    @include desktop-min {
+      display: none;
+    }
+  }
+  &__head {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 35px;
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+  &__btn {
+    font-size: 20px;
+    padding: 9px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--main);
+    color: black;
+    transition: background-color .2s ease, color .2s ease;
+    &.active {
+      background-color: var(--main);
+      color: white;
+    }
+    @include hover {
+      background-color: var(--main);
+      color: white;
+    }
+    @include laptop {
+      font-size: 18px;
+    }
+    @include tablet {
+      font-size: 16px;
+    }
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  &__catalog {
+    flex-wrap: wrap;
+    gap: 47px;
+    row-gap: 25px;
+    &.open {
+      display: flex;
+    }
+    @include desktop {
+      max-width: 1145px;
+      margin: 0 auto; 
+    }
+    @include desktop-min {
+      max-width: 845px;
+    }
+    @include laptop {
+      gap: 20px;
+      max-width: 790px;
+    }
+    @media (max-width: 819px) {
+      max-width: 520px;
+      justify-content: center;
+    }
+    @include tablet {
+      .product {
+        display: none;
+        &:nth-child(-n+6) {
+          display: block;
+        }
+      }
+    }
+  }
+}
