@@ -1,32 +1,71 @@
 .offer {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: end;
-  padding-bottom: 100px;
+  padding: 30px 0px 100px 0px;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 50%;
+    bottom: 80px;
+    left: 0;
+    border-radius: 5px;
+    background-color: var(--main);
+    z-index: -1;
+  }
+  @include desktop-min {
+    &::before {
+      right: 45%;
+    }
+  }
   @include laptop {
     flex-direction: column;
     row-gap: 45px;
+    padding-top: 0;
+    &::before {
+      display: none;
+    }
+  }
+  &__container {
+    @include flex-between;
+    gap: 100px;
+    @include desktop-min {
+      gap: 70px;
+    }
+    @include laptop {
+      flex-direction: column;
+      gap: 45px;
+    }
   }
   &__about {
-    padding: 30px 70px 50px 70px;
-    border-radius: 5px;
     color: white;
-    background-color: var(--main);
     overflow: hidden;
-    flex: 0 1 830px;
+    flex: 0 1 670px;
     @include desktop {
       flex-basis: 700px;
     }
-    @include desktop-min {
-      flex-basis: 490px;
-      padding: 30px;
-    }
     @include laptop {
+      position: relative;
       flex: none;
       width: 100%;
+      overflow: visible;
+      padding: 30px 0px;
+      z-index: 1;
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: var(--main);
+        inset: 0px -15px 0px -15px;
+        z-index: -1;
+      }
     }
   }
   &__about-title {
     margin-bottom: 20px;
+    color: white;
     @include laptop {
       text-align: center;
     }
@@ -37,6 +76,11 @@
     margin: 0px 0px 70px 0px;
     @include desktop-min {
       margin-bottom: 30px;
+    }
+    @include laptop {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
   }
   &__slider {
@@ -63,7 +107,7 @@
   }
   &__slider-pagination {
     display: flex;
-    margin-top: 10px;
+    margin-top: 30px;
     gap: 30px;
     @include desktop {
       gap: 20px;
@@ -122,8 +166,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    flex: 1;
+    flex: 0 1 630px;
     @include laptop {
       padding: 0 25px;
       width: 100%;
@@ -135,7 +178,6 @@
     align-items: center;
     border-radius: 5px;
     padding: 25px 60px 60px 60px;
-    max-width: 630px;
     width: 100%;
     background-color: var(--light-gray);
     margin: 0 auto;
@@ -178,10 +220,10 @@
     }
     @include tablet {
       font-size: 18px;
-      gap: 10px
+      gap: 10px;
     }
     @include mobile-min {
-      font-size: 16px
+      font-size: 16px;
     }
   }
   &__trading-play {

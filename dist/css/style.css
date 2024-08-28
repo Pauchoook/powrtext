@@ -1153,20 +1153,38 @@ body {
   transition: color .2s ease
 }
 .offer {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: end;
-  padding-bottom: 100px
+  padding: 30px 0 100px 0;
+  z-index: 1
+}
+.offer::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 50%;
+  bottom: 80px;
+  left: 0;
+  border-radius: 5px;
+  background-color: var(--main);
+  z-index: -1
+}
+.offer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px
 }
 .offer__about {
-  padding: 30px 70px 50px 70px;
-  border-radius: 5px;
   color: #fff;
-  background-color: var(--main);
   overflow: hidden;
-  flex: 0 1 830px
+  flex: 0 1 670px
 }
 .offer__about-title {
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  color: #fff
 }
 .offer__about-content {
   font-size: 14px;
@@ -1186,7 +1204,7 @@ body {
 }
 .offer__slider-pagination {
   display: flex;
-  margin-top: 10px;
+  margin-top: 30px;
   gap: 30px
 }
 .offer__pagination-btn {
@@ -1219,8 +1237,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
-  flex: 1
+  flex: 0 1 630px
 }
 .offer__trading-body {
   display: flex;
@@ -1228,7 +1245,6 @@ body {
   align-items: center;
   border-radius: 5px;
   padding: 25px 60px 60px 60px;
-  max-width: 630px;
   width: 100%;
   background-color: var(--light-gray);
   margin: 0 auto
@@ -2116,7 +2132,7 @@ body {
 .reklam__decor {
   position: absolute;
   top: 50px;
-  right: -400px;
+  right: -100px;
   width: 815px;
   z-index: -1
 }
@@ -2407,7 +2423,7 @@ body {
   align-items: center;
   padding-left: 60px;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 20px;
   color: #000;
   width: 100%
 }
@@ -4677,9 +4693,11 @@ html.with-fancybox body.hide-scrollbar {
   .category__item:nth-child(even) {
     border-right: none!important
   }
-  .offer__about {
-    flex-basis: 490px;
-    padding: 30px
+  .offer::before {
+    right: 45%
+  }
+  .offer__container {
+    gap: 70px
   }
   .offer__about-content {
     margin-bottom: 30px
@@ -4861,13 +4879,37 @@ html.with-fancybox body.hide-scrollbar {
   }
   .offer {
     flex-direction: column;
-    row-gap: 45px
+    row-gap: 45px;
+    padding-top: 0
+  }
+  .offer::before {
+    display: none
+  }
+  .offer__container {
+    flex-direction: column;
+    gap: 45px
   }
   .offer__about {
+    position: relative;
     flex: none;
-    width: 100%
+    width: 100%;
+    overflow: visible;
+    padding: 30px 0;
+    z-index: 1
+  }
+  .offer__about::before {
+    position: absolute;
+    content: "";
+    background-color: var(--main);
+    inset: 0 -15px 0 -15px;
+    z-index: -1
   }
   .offer__about-title {
+    text-align: center
+  }
+  .offer__about-content {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center
   }
   .offer__slider {
@@ -5023,7 +5065,7 @@ html.with-fancybox body.hide-scrollbar {
     border-bottom: 1px solid #d9d9d9
   }
   .answers__btn {
-    font-size: 20px
+    font-size: 18px
   }
   .footer__head-container {
     flex-direction: column;
@@ -5491,10 +5533,20 @@ html.with-fancybox body.hide-scrollbar {
   .reklam__list li {
     gap: 8px
   }
+  .reklam__list-icon {
+    width: 40px
+  }
   .advantages__title {
     font-size: 22px;
     margin-bottom: 35px;
     text-align: center
+  }
+  .advantages__body {
+    gap: 15px
+  }
+  .advantages__item {
+    flex-basis: calc(50% - 8px);
+    gap: 12px
   }
   .advantages__item-title {
     font-size: 20px
@@ -5609,10 +5661,6 @@ html.with-fancybox body.hide-scrollbar {
   }
   .blog__article {
     flex-basis: calc(50% - 8px)
-  }
-  .advantages__item {
-    flex-basis: 100%;
-    gap: 12px
   }
   .advantages__video {
     width: 100%;
@@ -5756,8 +5804,10 @@ html.with-fancybox body.hide-scrollbar {
     margin-top: 200px
   }
   .reklam__list li {
-    flex-basis: 100%;
-    gap: 30px
+    gap: 10px
+  }
+  .reklam__list-title {
+    font-size: 14px
   }
   .products__btn {
     font-size: 14px
@@ -5772,12 +5822,17 @@ html.with-fancybox body.hide-scrollbar {
   .questions__title {
     font-size: 22px
   }
+  .answers__title {
+    font-size: 22px
+  }
   .answers__btn {
     padding-left: 50px
   }
-  .answers__spoller-content {
-    font-size: 12px;
+  .answers__spoller {
     padding-left: 50px
+  }
+  .answers__spoller-content {
+    font-size: 12px
   }
   .footer::before {
     position: absolute;
@@ -5861,6 +5916,9 @@ html.with-fancybox body.hide-scrollbar {
   }
   .blog__img {
     height: 110px
+  }
+  .advantages__item {
+    flex-basis: 100%
   }
 }
 @media (any-hover:hover) {

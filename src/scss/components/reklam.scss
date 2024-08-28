@@ -54,7 +54,7 @@
   &__decor {
     position: absolute;
     top: 50px;
-    right: -400px;
+    right: -100px;
     width: 815px;
     z-index: -1;
     @include desktop {
@@ -212,13 +212,15 @@
         gap: 8px;
       }
       @include mobile {
-        flex-basis: 100%;
-        gap: 30px;
+        gap: 10px;
       }
     }
   }
   &__list-icon {
     width: 70px;
+    @include tablet {
+      width: 40px;
+    }
   }
   &__list-title {
     margin: 0;
@@ -230,6 +232,9 @@
     }
     @include desktop-min {
       font-size: 20px;
+    }
+    @include mobile {
+      font-size: 14px;
     }
   }
 }
