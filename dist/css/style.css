@@ -923,6 +923,9 @@ body {
   left: 234px;
   top: 1px
 }
+.header__dropdown-catalog--sub-end .dropdown__parent:not(:last-child) {
+  border-bottom: 1px solid var(--iron)
+}
 .header__category-icon {
   width: 14px;
   height: 14px
