@@ -49,7 +49,7 @@
       flex-basis: calc(50% - 15px);
     }
     @include mobile {
-      flex-basis: 370px;
+      flex-basis: 250px;
     }
   }
   &__img {
@@ -61,7 +61,7 @@
       height: 150px;
     }
     @include mobile {
-      height: 220px;
+      height: 120px;
     }
   }
   &__article-body {
@@ -78,7 +78,7 @@
     color: var(--tundora);
     transition: color 0.2s ease;
     @include mobile {
-      font-size: 24px;
+      font-size: 14px;
     }
   }
   &__article-info {

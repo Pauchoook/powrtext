@@ -1,5 +1,9 @@
 export default function dropdown() {
   if (window.matchMedia("(min-width: 744px)").matches) {
+    if (window.location.pathname === "/") {
+      document.querySelector(".header__dropdown-catalog").classList.add("open");
+    }
+
     const buttons = document.querySelectorAll(".dropdown-btn");
     if (buttons.length) {
       if (window.location.pathname === "/") {

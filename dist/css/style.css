@@ -950,16 +950,6 @@ body {
   position: relative;
   font-size: 18px
 }
-.header__nav-list a::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  right: 100%;
-  height: 1px;
-  background-color: currentColor;
-  transition: right .2s ease
-}
 .hero {
   padding: 35px 0;
   overflow: hidden
@@ -1520,7 +1510,7 @@ body {
   gap: 20px;
   width: 100%;
   padding: 0 15px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   transition: background-color .2s ease,color .2s ease
 }
@@ -5740,13 +5730,13 @@ html.with-fancybox body.hide-scrollbar {
     justify-content: center
   }
   .news__article {
-    flex-basis: 370px
+    flex-basis: 250px
   }
   .news__img {
-    height: 220px
+    height: 120px
   }
   .news__article-title {
-    font-size: 24px
+    font-size: 14px
   }
   .news__article-info-item {
     font-size: 12px
@@ -5992,9 +5982,6 @@ html.with-fancybox body.hide-scrollbar {
   }
   .header__catalog-list-btn:hover {
     color: var(--main)
-  }
-  .header__nav-list a:hover::before {
-    right: 0
   }
   .category__list a:hover {
     color: var(--main)
